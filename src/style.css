@@ -1,3 +1,42 @@
 body {
-    background-color: bisque;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.todo-list {
+  padding: 24px 56px;
+  color: rgb(66, 66, 66);
+}
+
+.todo-list ul {
+  box-shadow: 0 0 15px 0 #888;
+  padding-left: 0;
+}
+
+.input {
+  border: none;
+  outline: none;
+}
+
+.input::placeholder {
+  font-style: italic;
+}
+
+.todo-list ul li {
+  padding: 12px;
+  border-bottom: 1px solid rgb(158, 158, 158);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@font-face {
+  font-family: 'Pacifico';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format('woff2');
 }
