@@ -20,6 +20,7 @@ const tasks = [
 const todoList = document.querySelector('.todo-list');
 
 function display() {
+  todoList.innerHTML = '';
   const taskList = document.createElement('ul');
   const listItem1 = document.createElement('li');
   listItem1.innerHTML += '<span>Today\'s To Do</span> <span class=\'fa fa-refresh\'></span>';
