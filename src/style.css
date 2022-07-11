@@ -57,6 +57,19 @@ ul {
   color: rgb(29, 93, 255);
 }
 
+.checked {
+  text-decoration: line-through;
+}
+
+#clear-button {
+  justify-content: center;
+  background: rgb(255, 255, 234);
+}
+
+#clear-button:hover {
+  cursor: pointer;
+}
+
 @font-face {
   font-family: 'Pacifico';
   font-style: normal;

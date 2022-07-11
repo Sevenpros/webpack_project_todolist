@@ -1,6 +1,7 @@
 import './style.css';
 import Storage from './localStorage.js';
 import Task from './taskManager.js';
+import Status from './taskStatus.js';
 
 const todoList = document.querySelector('.todo-list');
 
@@ -20,12 +21,23 @@ function display() {
       const listItem = document.createElement('li');
       listItem.id = `task${task.index}`;
       listItem.classList.add('taskDescription');
-      listItem.innerHTML = `<div><input type="checkbox" id="${task.index}">
-          <label for="${task.index}" class='label'>${task.desc}</label></div> 
-          <span class=' icons fa fa-ellipsis-v' target='task${task.index}' index='${task.index}'></span>`;
-      taskList.appendChild(listItem);
+      if (task.completed === false) {
+        listItem.innerHTML = `<div><input class='checkbox' type="checkbox" id="${task.index}">
+        <label for="${task.index}" class='label'>${task.desc}</label></div> 
+        <span class=' icons fa fa-ellipsis-v' target='task${task.index}' status='${task.completed}' index='${task.index}'></span>`;
+        taskList.appendChild(listItem);
+      } else {
+        listItem.innerHTML = `<div><input class='checkbox' type="checkbox" checked id="${task.index}">
+        <label for="${task.index}" class='label checked'>${task.desc}</label></div> 
+        <span class=' icons fa fa-ellipsis-v' target='task${task.index}' status='${task.completed}' index='${task.index}'></span>`;
+        taskList.appendChild(listItem);
+      }
     });
   }
+  const clearButton = document.createElement('li');
+  clearButton.id = 'clear-button';
+  clearButton.textContent = 'Clear All Completed';
+  taskList.appendChild(clearButton);
   return taskList;
 }
 
@@ -73,7 +85,8 @@ function makeItemEditable(id) {
 todoList.addEventListener('click', (e) => {
   if (e.target.classList.contains('fa-ellipsis-v')) {
     const target = e.target.getAttribute('target');
-    makeItemEditable(target);
+    const status = e.target.getAttribute('status');
+    if (status === 'false') makeItemEditable(target);
   }
 });
 
@@ -86,6 +99,21 @@ todoList.addEventListener('input', (e) => {
 });
 todoList.addEventListener('click', (e) => {
   if (e.target.classList.contains('refreshData')) {
+    todoList.appendChild(display());
+  }
+});
+todoList.addEventListener('change', (e) => {
+  if (e.target.classList.contains('checkbox')) {
+    const { id } = e.target;
+    const taskStatus = new Status(id);
+    taskStatus.completeTask();
+    todoList.appendChild(display());
+  }
+});
+
+todoList.addEventListener('click', (e) => {
+  if (e.target.id === 'clear-button') {
+    Status.clearCompletedTask();
     todoList.appendChild(display());
   }
 });
