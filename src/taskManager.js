@@ -13,13 +13,18 @@ export default class Task {
     if (!tasks) tasks = [];
     const index = tasks.length;
     const task = new Task(this.desc, this.index, this.completed);
-    tasks.push(task);
-    tasks[index].index = tasks.length;
-    const newStorage = new Storage(tasks);
-    newStorage.storedData();
+    if (task.desc) {
+      tasks.push(task);
+      tasks[index].index = tasks.length;
+      const newStorage = new Storage(tasks);
+      newStorage.storedData();
+      return tasks.length;
+    }
+    return 'invalid task entered';
   }
 
   static removeTask(id) {
+    if (!id) return 'can not remove task with invalid id';
     const tasks = Storage.getData();
     tasks.splice(id - 1, 1);
     tasks.map((task, i) => {
@@ -28,6 +33,7 @@ export default class Task {
     });
     const remainingStorage = new Storage(tasks);
     remainingStorage.storedData();
+    return tasks[tasks.length - 1].desc;
   }
 
   static editTask(id, desc) {
