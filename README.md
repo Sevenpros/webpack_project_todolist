@@ -1,19 +1,17 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# to-do-list
+ "To-do-list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
+ 
+ # Delopyment
+ Demo [click Here]( https://sevenpros.github.io/webpack_project_todolist/) to check out the online version
 
-# Todo list
-
- This is Todo list project where a user can add a task to the list can remove a task or mark task as completed.[click Here]( https://sevenpros.github.io/webpack_project_todolist/)to vew the Demo.
-
-
-## Built With
-
-- JAVASCRIPT, HTML & CSS
-
-
-## Getting Started
-
-
-
+ # Built With
+- Languages - HTML, CSS and Javascript
+- Frameworks - None
+- Technologies - Web Technology
+- Other tools - webpack
+- npm as software packages system
+- unit testing
+# Getting started
 To get a local copy up and running follow these simple example steps.
 - Visit my github repo of this project [@githubhandle](https://github.com/Sevenpros/webpack_project_todolist);
 - clone the project into you pc.
@@ -22,15 +20,28 @@ To get a local copy up and running follow these simple example steps.
 - using terminal write ```npm run start ```  
 - the web app will be open in the your default browser;
 - enjoy 
-
 ### Prerequisites
-- In order to clone the project you need to have a git installed in your computer
-- Node and npm installed
-- To run the project you will need to have a web browser installed on your computer as well.
+One should have knowledge about the following
+- HTML, CSS, Javascript and npm
 
+### Run
+- Navigate to the local folder and clone the repository from the github 
+- Run "git clone [url](https://github.com/Bornittah/to-do-list.git)"
+- Navigate to the cloned project
+- On your terminal Run "npm start"
 
+# Contributing
+Feel free to check out the [Issues page](https://github.com/Bornittah/to-do-list/issues)
 
-## Authors
+# Show your support
+Give a star if you like this project
+
+# Acknowledgement
+ [Microverse](https://www.microverse.org/?grsf=i6yi2m)
+ 
+# License
+This project is MIT licensed.
+# Project Authors
 
 👤 **Seth Bizimana**
 
@@ -38,13 +49,16 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@twitter](https://twitter.com/BizimanaSeth)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/sethBizimana)
 
-👤
+👤 **Nelson Ongiti**
+  - Github : [@MicroverseNelson]https://github.com/MicroverseNelson
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
+## 🤝 Contributing
 
+Contributions, issues, and feature requests are welcome!
 
 ## Show your support
 
@@ -52,8 +66,5 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 
