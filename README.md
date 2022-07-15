@@ -38,7 +38,8 @@ To get a local copy up and running follow these simple example steps.
 - Twitter: [@twitter](https://twitter.com/BizimanaSeth)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/sethBizimana)
 
-👤
+👤 **Nelson Ongiti**
+  - Github : [@MicroverseNelson]https://github.com/MicroverseNelson
 
 ## 🤝 Contributing
 
