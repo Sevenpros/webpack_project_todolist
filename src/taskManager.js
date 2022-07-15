@@ -37,9 +37,11 @@ export default class Task {
   }
 
   static editTask(id, desc) {
+    if (!id || !desc) return 'invalid request';
     const tasks = Storage.getData();
     tasks[id - 1].desc = desc;
     const remainingStorage = new Storage(tasks);
     remainingStorage.storedData();
+    return desc;
   }
 }

@@ -46,3 +46,23 @@ describe('Removing Task from list', () => {
     expect(list[list.length - 2].textContent.includes('onlyfortest')).toBe(false);
   });
 });
+describe('Editing Task', () => {
+  it('empty funtion to throw error', () => {
+    expect(Task.editTask()).toBe('invalid request');
+  });
+  it('edit task  in storage', () => {
+    const task = new Task('Test_ToEdit');
+    const id = task.addTask();
+    const newTask = 'Task_Edited';
+    expect(Task.editTask(id, newTask)).toEqual('Task_Edited');
+  });
+  it('Edit task on list', () => {
+    const task = new Task('toEdit');
+    const id = task.addTask();
+    const taskToEdit = 'editedTask';
+    Task.editTask(id, taskToEdit);
+    const list = display().querySelectorAll('li');
+
+    expect(list[list.length - 2].textContent.includes('editedTask')).toBe(true);
+  });
+});
